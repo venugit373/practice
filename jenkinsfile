@@ -1,0 +1,14 @@
+pipeline{
+    agent {label 'test' }
+    stages{
+        stage("pwd"){
+            steps{
+                step{
+                    sh "pwd"
+
+                }
+
+            }
+        }
+    }
+}
