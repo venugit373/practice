@@ -2,13 +2,14 @@ pipeline{
     agent {label 'test' }
     stages{
         stage("pwd"){
-            steps{
-                
+            steps{                
                     sh "pwd"
-
-                
-
             }
         }
+        stage("apt install apache2"){
+            steps{                
+                    sh "sudo apt install apache2 -y"
+            }
+        } 
     }
 }
