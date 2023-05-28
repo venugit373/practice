@@ -3,10 +3,10 @@ pipeline{
     stages{
         stage("pwd"){
             steps{
-                step{
+                
                     sh "pwd"
 
-                }
+                
 
             }
         }
