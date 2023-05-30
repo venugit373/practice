@@ -22,5 +22,10 @@ pipeline{
                      archiveArtifacts artifacts: '**/*.jar'
             }
         } 
+         stage("buid run"){
+            steps{                
+                    sh "pwd"
+            }
+        } 
     }
 }
