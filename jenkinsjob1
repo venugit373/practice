@@ -24,8 +24,8 @@ pipeline{
         } 
          stage("buid run"){
             steps{    
-                sh "cd /target"            
-                    sh "java -jar spring-petclinic-3.1.0-SNAPSHOT.jar"
+                         
+                    sh "java -jar **/target/spring-petclinic-3.1.0-SNAPSHOT.jar"
             }
         } 
     }
