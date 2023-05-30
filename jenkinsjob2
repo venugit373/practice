@@ -5,13 +5,15 @@ pipeline{
         stage("java  versiobn node3"){
              agent {label 'node3' }
             steps{                
-                    sh "java --version"
+                    sh "touch 1.txt"
+                    sh "echo 'this is jenkins'> 1.txt"
             }
         } 
          stage("java version node1"){
              agent {label 'node1' }
             steps{                
-                    sh "java --version"
+                    sh "touch 2.txt"
+                    sh "echo 'this is maven'> 2.txt"
             }
         } 
     }
