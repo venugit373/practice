@@ -1,0 +1,18 @@
+pipeline{
+   agent none
+    stages{
+        
+        stage("java  versiobn node3"){
+             agent {label 'node3' }
+            steps{                
+                    sh "java --version"
+            }
+        } 
+         stage("java version node1"){
+             agent {label 'node1' }
+            steps{                
+                    sh "java --version"
+            }
+        } 
+    )
+)
