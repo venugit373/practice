@@ -17,5 +17,10 @@ pipeline{
                     sh "/opt/apache-maven-3.9.2/bin/mvn package"
             }
         } 
+        stage("publish"){
+            steps{                
+                     archiveArtifacts artifacts: '**/*.jar'
+            }
+        } 
     }
 }
