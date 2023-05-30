@@ -1,0 +1,21 @@
+pipeline{
+    agent {label 'node1' }
+    stages{
+        
+        stage("maven install"){
+            steps{                
+                    sh "sudo apt install maven -y"
+            }
+        } 
+         stage("gitclone petclinc"){
+            steps{                
+                    git url:"https://github.com/spring-projects/spring-petclinic.git",branch:"main"
+            }
+        } 
+        stage("maven build"){
+            steps{                
+                    sh "mvn package"
+            }
+        } 
+    }
+}
