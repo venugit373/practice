@@ -23,8 +23,9 @@ pipeline{
             }
         } 
          stage("buid run"){
-            steps{                
-                    sh "java -jar /remote/workspace/jenknsnode/target/spring-petclinic-3.1.0-SNAPSHOT.jar"
+            steps{    
+                sh "cd /target"            
+                    sh "java -jar spring-petclinic-3.1.0-SNAPSHOT.jar"
             }
         } 
     }
