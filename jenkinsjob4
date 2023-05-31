@@ -1,0 +1,32 @@
+pipeline{
+    agent {label 'node1' }
+    stages{
+        
+        stage("maven install"){
+            steps{                
+                    sh "sudo apt install maven -y"
+            }
+        } 
+         stage("gitclone petclinc"){
+            steps{                
+                    git url:"https://github.com/spring-projects/spring-petclinic.git",branch:"main"
+            }
+        } 
+        stage("maven build"){
+            steps{                
+                    sh "/opt/apache-maven-3.9.2/bin/mvn package"
+            }
+        } 
+        stage("publish"){
+            steps{                
+                     archiveArtifacts artifacts: '**/*.jar'
+            }
+        } 
+         stage("buid run"){
+            steps{    
+                         
+                    sh "sudo java -jar **/spring-petclinic-3.1.0-SNAPSHOT.jar"
+            }
+        } 
+    }
+}
