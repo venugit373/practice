@@ -1,0 +1,15 @@
+pipeline{
+   agent none
+    stages{
+        
+        stage("java  versiobn node3"){
+             agent {label 'node1' }
+            steps{                
+                    sh "touch 1.txt"
+                    sh "echo 'this is jenkins'> 1.txt"
+                     sh "echo 'this is venu'> 1.txt"
+            }
+        } 
+        
+    }
+}
