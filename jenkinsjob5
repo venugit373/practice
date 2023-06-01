@@ -1,7 +1,7 @@
 pipeline {
     agent {label "test"}
     triggers {
-        cron('0 12 * * 1-5')
+        pollSCM('5 12 * * 1-5')
     }
     stages {
         stage('Example') {
