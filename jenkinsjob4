@@ -1,6 +1,6 @@
 pipeline{
     agent {label 'test' }
-    triggers { cron('11 15 * * 1-5') }
+    triggers { cron('49 16 * * 1-5') }
     stages{
         
         stage("maven install"){
