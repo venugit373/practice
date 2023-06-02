@@ -1,6 +1,6 @@
 pipeline{
     agent {label 'test' }
-    triggers { cron('21 11 * * *') }
+    triggers { pollSCM('21 11 * * *') }
     stages{
         
         stage("maven install"){
@@ -14,7 +14,11 @@ pipeline{
             }
         } 
         stage("maven build"){
-            steps{                
+            steps{          
+                    to: 'qtdevops@gmail.com',                     
+                    mail subject: 'Build Started', 
+                    body: 'Build Started'
+                        
                     sh "/opt/apache-maven-3.9.2/bin/mvn package"
             }
         } 
