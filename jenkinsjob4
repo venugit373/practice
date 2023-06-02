@@ -1,6 +1,6 @@
 pipeline{
     agent {label 'test' }
-    triggers { pollSCM('21 11 * * *') }
+    triggers { pollSCM('* * * * *') }
     stages{
         
         stage("maven install"){
