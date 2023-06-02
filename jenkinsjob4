@@ -15,11 +15,10 @@ pipeline{
 
         } 
         stage("maven build"){
-            steps{          
-                                        
+            steps{                              
                     mail subject: 'Build Started', 
                     body: 'Build Started',
-                    to: 'qtdevops@gmail.com',
+                    to: 'qtdevops@gmail.com'
                         
                     sh "/opt/apache-maven-3.9.2/bin/mvn package"
             }
